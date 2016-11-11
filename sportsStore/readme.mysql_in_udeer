@@ -1,0 +1,82 @@
+//install mysql on Ubuntu 16.04
+
+$ sudo apt install mysql-server mysql-client
+
+   root password:  co##mxxxx
+
+//The mysql_secure_installation command will change the root password, disable
+//  and remove anonymous users from MySQL server, turn off the MySQL root user
+//  login remotely, delete test database, and reload privilege tables on the
+//  system. If you’ve completed all of the steps and answer yes to these
+//  questions. Your MySQL installation should now be secure.
+//
+$ sudo mysql_secure_installation
+
+//To log in as the root user
+//
+$ mysql -u root -p
+Enter password:
+mysql>
+
+//Create new database and user account
+//  CREATE DATABASE DATABASE-NAME-HERE;
+//  GRANT ALL ON DATABASE-NAME-HERE.* TO 'DATABASE-USERNAME-HERE' IDENTIFIED BY 'DATABASE-PASSWORD-HERE';
+//
+mysql> create database sportsStore;
+mysql> grant all on sportsStore.* to 'udeer' identified by 'co##m****';
+mysql> show databases;
+mysql> quit;
+
+//To log in as udeer user
+//  mysql -u USERNAME -p DB-NAME-HERE
+//
+$ mysql -u udeer -p sportsStore
+Enter password:
+mysql> show databases;
+
+//Create table and insert data
+mysql> create table products (id INT UNSIGNED NOT NULL AUTO_INCREMENT, category VARCHAR(30),
+       description VARCHAR(512), name VARCHAR(128), price DECIMAL(10,2),
+       createdAt DATETIME, updatedAt DATETIME, PRIMARY KEY (id));
+mysql> INSERT INTO products (category, description, name, price,
+       createdAt, updatedAt, objectId)
+       VALUES("Watersports","A boat for one person", "Kayak", 275,
+       "2014-04-25 19:39:34", "2014-04-25 19:42:54", "iteixu2Sn9");
+
+mysql> select * from products
+
+mysel> INSERT INTO products (category, description, name, price, createdAt, updatedAt, objectId) VALUES(
+ "Watersports", "Protective and fashionable",
+"Lifejacket",48.95,"2014-04-25 19:39:34", "2014-04-25 19:42:54", "3d31d81b218c98ef");
+mysel> INSERT INTO products (category, description, name, price, createdAt, updatedAt, objectId) VALUES(
+"Soccer","FIFA-approved size and weight",
+"Soccer Ball",19.5,"2014-04-25 19:39:34", "2014-04-25 19:42:54", "437615faf1d38815");
+mysel> INSERT INTO products (category, description, name, price, createdAt, updatedAt, objectId) VALUES(
+"Soccer","Give your playing field a professional touch",
+"Corner Flags",34.95,"2014-04-25 19:39:34", "2014-04-25 19:42:54", "93c9cc08ac2f28d4");
+mysel> INSERT INTO products (category, description, name, price, createdAt, updatedAt, objectId) VALUES(
+"Soccer","Flat-packed 35,000-seat stadium",
+"Stadium",79500,"2014-04-25 19:39:34", "2014-04-25 19:42:54", "ad4e64b38baa088f");
+mysel> INSERT INTO products (category, description, name, price, createdAt, updatedAt, objectId) VALUES(
+"Chess","Improve your brain efficiency by 75%",
+"Thinking Cap",16,"2014-04-25 19:39:34", "2014-04-25 19:42:54", "b9e8e55c1ecc0b63");
+mysel> INSERT INTO products (category, description, name, price, createdAt, updatedAt, objectId) VALUES(
+"Chess","Secretly give your opponent a disadvantage",
+"Unsteady Chair",29.95,"2014-04-25 19:39:34", "2014-04-25 19:42:54", "32c2355f9a617bbd");
+mysel> INSERT INTO products (category, description, name, price, createdAt, updatedAt, objectId) VALUES(
+"Chess","A fun game for the family",
+"Human Chess Board",75,"2014-04-25 19:39:34", "2014-04-25 19:42:54", "5241512218f73a26");
+mysel> INSERT INTO products (category, description, name, price, createdAt, updatedAt, objectId) VALUES(
+"Chess","Gold-plated, diamond-studded King",
+"Bling-Bling King",1200,"2014-04-25 19:39:34", "2014-04-25 19:42:54", "59166228d70f8858");
+
+
+
+
+
+
+
+
+
+
+
